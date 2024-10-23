@@ -24,20 +24,20 @@
         <!-- Meta End -->
     </head>
 
-    <body style="background-color:rgb(255, 255, 255);">
-        <div id="myTopnav" class="topnav" width="100%">
-            <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+    <body style="background-color:rgb(207, 207, 222);" onload="openNav('main')">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="#main" onclick="showContent('main')">Home</a>
             <!-- <a href="#about" onclick="showContent('about')">About</a> -->
             <a href="#publications" onclick="showContent('publications')">Publications</a>
             <!-- <a href="#">Teaching Experience</a> -->
             <a href="#projects" onclick="showContent('projects')">Academic Projects</a>
             <a href="#work" onclick="showContent('work')">Work Experience</a>
-            <!-- <a href="#contact" onclick="showContent('contact')">Contact</a> -->
+            <a href="#contact" onclick="showContent('contact')">Contact</a>
         </div>
           
-        <div id="main" style="margin-left: 0px;">
-            <!-- <span style="font-size:30px;cursor:pointer" onclick="openNav('main')">&#9776;</span> -->
+        <div id="main" style="margin-left: 250px;">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav('main')">&#9776;</span>
             <h2>Aishwarya Jayagopal</h2>
             <img src="bio.jpg" width="100px" height="auto" align="left" hspace="5">
             <!-- <br><br> -->
@@ -65,8 +65,8 @@
             
         </div> -->
 
-        <div id="publications" style="display: none; margin-left: 0px;">
-            <!-- <span style="font-size:30px;cursor:pointer" onclick="openNav('publications')">&#9776;</span> -->
+        <div id="publications" style="display: none; margin-left: 250px;">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav('publications')">&#9776;</span>
             <h2>Publications</h2>
             <h3>Accepted Papers</h3>
             <ol>
@@ -107,8 +107,8 @@
             </ol>
         </div>
 
-        <div id="projects" style="display: none; margin-left: 0px;">
-            <!-- <span style="font-size:30px;cursor:pointer" onclick="openNav('projects')">&#9776;</span> -->
+        <div id="projects" style="display: none; margin-left: 250px;">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav('projects')">&#9776;</span>
             <h2>Academic Projects</h2>
             <div class="row">
                 <div class="column">
@@ -203,8 +203,8 @@
                 
         </div>
 
-        <div id="work" style="display: none; margin-left: 0px;">
-            <!-- <span style="font-size:30px;cursor:pointer" onclick="openNav('work')">&#9776;</span> -->
+        <div id="work" style="display: none; margin-left: 250px;">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav('work')">&#9776;</span>
             <h2>Work Experience</h2>
             <div class="row">
                 <div class="column">
@@ -243,39 +243,39 @@
             </div>
         </div>
 
-        <!-- <div id="contact" style="display: none; margin-left: 0px;">
-            <span style="font-size:30px;cursor:pointer" onclick="openNav('contact')">&#9776;</span> 
-             <h2>Contact</h2>
+        <div id="contact" style="display: none; margin-left: 250px;">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav('contact')">&#9776;</span>
+            <h2>Contact</h2>
             <a href="mailto: aishwarya.jayagopal@u.nus.edu"> Send Me an Email </a>
             <br>
             <a href="https://www.linkedin.com/in/aishwarya-jayagopal/"> Connect with me on LinkedIn </a>
             <br>
             <a href="https://scholar.google.com/citations?user=CnvrQUAAAAAJ&hl=en"> View my Google Scholar Profile </a>
             <br>
-        </div> -->
+        </div>
 
         <script>
-        // function openNav(idname) {
-        // // document.getElementById("myTopnav").style.width = "250px";
-        // document.getElementById(idname).style.marginLeft = "250px";
-        // document.getElementById(idname).style.display = "block";
-        // document.getElementById("main").style.marginLeft = "250px";
-        // // document.getElementById("about").style.marginLeft = "250px";
-        // document.getElementById("publications").style.marginLeft= "250px";
-        // document.getElementById("projects").style.marginLeft = "250px";
-        // document.getElementById("work").style.marginLeft = "250px";
-        // // document.getElementById("contact").style.marginLeft = "250px";
-        // }
+        function openNav(idname) {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById(idname).style.marginLeft = "250px";
+        document.getElementById(idname).style.display = "block";
+        document.getElementById("main").style.marginLeft = "250px";
+        // document.getElementById("about").style.marginLeft = "250px";
+        document.getElementById("publications").style.marginLeft= "250px";
+        document.getElementById("projects").style.marginLeft = "250px";
+        document.getElementById("work").style.marginLeft = "250px";
+        document.getElementById("contact").style.marginLeft = "250px";
+        }
         
         function closeNav() {
-        document.getElementById("myTopnav").style.width = "0";
+        document.getElementById("mySidenav").style.width = "0";
         // document.getElementById(idname).style.marginLeft= "0";
         document.getElementById("main").style.marginLeft= "0";
         // document.getElementById("about").style.marginLeft= "0";
         document.getElementById("publications").style.marginLeft= "0";
         document.getElementById("projects").style.marginLeft = "0";
         document.getElementById("work").style.marginLeft = "0";
-        // document.getElementById("contact").style.marginLeft = "0";
+        document.getElementById("contact").style.marginLeft = "0";
         }
 
         function showContent(idname) {
@@ -292,35 +292,35 @@
                 document.getElementById("main").style.display = "none";
                 document.getElementById("projects").style.display = "none";
                 document.getElementById("work").style.display = "none";
-                // document.getElementById("contact").style.display = "none";
+                document.getElementById("contact").style.display = "none";
             }
             else if (idname == "projects") {
                 // document.getElementById("about").style.display = "none";
                 document.getElementById("publications").style.display = "none";
                 document.getElementById("main").style.display = "none";
                 document.getElementById("work").style.display = "none";
-                // document.getElementById("contact").style.display = "none";
+                document.getElementById("contact").style.display = "none";
             }
             else if (idname == "work") {
                 // document.getElementById("about").style.display = "none";
                 document.getElementById("publications").style.display = "none";
                 document.getElementById("projects").style.display = "none";
                 document.getElementById("main").style.display = "none";
-                // document.getElementById("contact").style.display = "none";
+                document.getElementById("contact").style.display = "none";
             }
-            // else if (idname == "contact") {
-            //     // document.getElementById("about").style.display = "none";
-            //     document.getElementById("publications").style.display = "none";
-            //     document.getElementById("projects").style.display = "none";
-            //     document.getElementById("work").style.display = "none";
-            //     document.getElementById("main").style.display = "none";
-            // }
+            else if (idname == "contact") {
+                // document.getElementById("about").style.display = "none";
+                document.getElementById("publications").style.display = "none";
+                document.getElementById("projects").style.display = "none";
+                document.getElementById("work").style.display = "none";
+                document.getElementById("main").style.display = "none";
+            }
             else {
                 // document.getElementById("about").style.display = "none";
                 document.getElementById("publications").style.display = "none";
                 document.getElementById("projects").style.display = "none";
                 document.getElementById("work").style.display = "none";
-                // document.getElementById("contact").style.display = "none";
+                document.getElementById("contact").style.display = "none";
             }
             
         }
