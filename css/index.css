@@ -2,7 +2,7 @@
 
 *{
   font-family: 'Poppins', sans-serif;
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 /* Add a black background color to the top navigation */
@@ -106,12 +106,14 @@ padding: 16px;
 /* Float four columns side by side */
 .column {
   float: left;
-  width: 25%;
+  width: 20% !important;
   padding: 10px;
 }
 
 /* Remove extra left and right margins, due to padding in columns */
-.row {margin: 0 - 5px;}
+.row {
+  margin: 0 - 5px;
+}
 
 /* Clear floats after the columns */
 .row:after {
@@ -124,6 +126,7 @@ padding: 16px;
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 16px;
+  height: 100% !important;
   text-align: center;
   background-color: #f1f1f1;
 }
@@ -136,7 +139,7 @@ padding: 16px;
 /* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 600px) {
   .column {
-    width: 100%;
+    width: 100% !important;
     display: block;
     margin-bottom: 20px;
   }
