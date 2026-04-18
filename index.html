@@ -24,7 +24,7 @@
         <!-- Meta End -->
     </head>
 
-    <body style="background-color:rgb(255, 255, 255);">
+    <body>
         <div id="myTopnav" class="topnav" width="100%">
             <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
             <a href="#main" onclick="showContent('main')">Home</a>
@@ -34,6 +34,7 @@
             <a href="#projects" onclick="showContent('projects')">Academic Projects</a>
             <a href="#work" onclick="showContent('work')">Work Experience</a>
             <!-- <a href="#contact" onclick="showContent('contact')">Contact</a> -->
+            <a href="phd_blog.html">PhD Blog</a>
         </div>
           
         <div id="main" style="margin-left: 0px;">
@@ -316,51 +317,42 @@
         }
 
         function showContent(idname) {
-            document.getElementById(idname).style.display = "block";
-            // if (idname == "about") {
-            //     document.getElementById("publications").style.display = "none";
-            //     document.getElementById("main").style.display = "none";
-            //     document.getElementById("projects").style.display = "none";
-            //     document.getElementById("work").style.display = "none";
-            //     document.getElementById("contact").style.display = "none";
-            // }
-            if (idname == "publications") {
-                // document.getElementById("about").style.display = "none";
-                document.getElementById("main").style.display = "none";
-                document.getElementById("projects").style.display = "none";
-                document.getElementById("work").style.display = "none";
-                // document.getElementById("contact").style.display = "none";
+            // Hide all content divs
+            var contents = ["main", "publications", "projects", "work"];
+            contents.forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el) el.style.display = "none";
+            });
+
+            // Show the requested div
+            var target = document.getElementById(idname);
+            if (target) {
+                target.style.display = "block";
+            } else {
+                document.getElementById("main").style.display = "block";
+                idname = "main";
             }
-            else if (idname == "projects") {
-                // document.getElementById("about").style.display = "none";
-                document.getElementById("publications").style.display = "none";
-                document.getElementById("main").style.display = "none";
-                document.getElementById("work").style.display = "none";
-                // document.getElementById("contact").style.display = "none";
-            }
-            else if (idname == "work") {
-                // document.getElementById("about").style.display = "none";
-                document.getElementById("publications").style.display = "none";
-                document.getElementById("projects").style.display = "none";
-                document.getElementById("main").style.display = "none";
-                // document.getElementById("contact").style.display = "none";
-            }
-            // else if (idname == "contact") {
-            //     // document.getElementById("about").style.display = "none";
-            //     document.getElementById("publications").style.display = "none";
-            //     document.getElementById("projects").style.display = "none";
-            //     document.getElementById("work").style.display = "none";
-            //     document.getElementById("main").style.display = "none";
-            // }
-            else {
-                // document.getElementById("about").style.display = "none";
-                document.getElementById("publications").style.display = "none";
-                document.getElementById("projects").style.display = "none";
-                document.getElementById("work").style.display = "none";
-                // document.getElementById("contact").style.display = "none";
-            }
-            
+
+            // Update active class in topnav
+            var navLinks = document.querySelectorAll(".topnav a");
+            navLinks.forEach(function(link) {
+                link.classList.remove("active");
+                var href = link.getAttribute("href");
+                if (href === "#" + idname || (idname === "main" && href === "#main")) {
+                    link.classList.add("active");
+                }
+            });
         }
+
+        window.onload = function() {
+            var hash = window.location.hash.substring(1);
+            showContent(hash || "main");
+        };
+
+        window.onhashchange = function() {
+            var hash = window.location.hash.substring(1);
+            showContent(hash || "main");
+        };
         </script>
     </body>
 </html>
